@@ -185,7 +185,7 @@
 
         <div class="services-sliders">
 
-          <div class="delivery-slide visually-hidden">
+          <div class="delivery-slide visu1ally-hidden">
             <article class="delivery">
               <h3 class="delivery-heading">Доставка</h3>
               <p class="delivery-info">
@@ -209,7 +209,7 @@
             <img src="img/warranty.svg" alt="Гарантия">
           </div>
 
-          <div class="credit-slide visu1ally-hidden">
+          <div class="credit-slide visually-hidden">
             <article class="credit">
               <h3 class="credit-heading">Кредит</h3>
               <p class="credit-info">
@@ -265,70 +265,99 @@
             Всякое
             бывает.</p>
           <div class="map">
-            <img src="img/map.jpg" alt="Москва, ул.Строителей,15">
+            <img src="img/map.jpg" width="560" height="230" alt="Москва, ул.Строителей,15">
           </div>
           <a class="button" href="#">Напишите нам</a>
         </section>
       </div>
     </main>
+  </div>
 
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="main-container">
 
-    <!-- Footer -->
-    <footer class="main-footer">
-      <a class="footer-logo" href="#">Device</a>
-      <ul class="footer user-nav">
-        <li><a href="#">Войти</a></li>
-        <li><a href="">Сравнить</a></li>
-        <li><a href="">Корзина</a></li>
-      </ul>
-      <span class="footer-address">г. Москва, ул. Строителей, 15</span>
-      <span class="footer-phone">Тел.: +7 (495) 495-95-95</span>
-      <ul class="footer-nav">
-        <li class="footer-nav-item"><a href="#">Доставка</a></li>
-        <li class="footer-nav-item"><a href="#">Гарантия</a></li>
-        <li class="footer-nav-item"><a href="#">Контакты</a></li>
-      </ul>
-      <ul class="social-links">
-        <li><a class="social-button" href="#"><img src="#" alt="">Facebook</a></li>
-        <li><a class="social-button" href="#"><img src="#" alt="">Instagram</a></li>
-        <li><a class="social-button" href="#"><img src="#" alt="">Twitter</a></li>
-      </ul>
-    </footer>
+      <div class="footer-row1">
+        <a class="footer-logo" href="#">Device</a>
+        <ul class="footer user-nav">
+          <li><a class="user-nav-item user" href="#">Войти</a></li>
+          <li><a class="user-nav-item compare" href="#">Сравнить</a></li>
+          <li><a class="user-nav-item cart" href="#">Корзина</a></li>
+        </ul>
+      </div>
 
+      <div class="footer-row2">
+        <span class="footer-address">г. Москва, ул. Строителей, 15</span>
+        <ul class="footer-nav">
+          <li class="footer-nav-item"><a href="#">Доставка</a></li>
+          <li class="footer-nav-item"><a href="#">Гарантия</a></li>
+          <li class="footer-nav-item"><a href="#">Контакты</a></li>
+        </ul>
+        <span class="footer-phone">Тел.: +7 (495) 495-95-95</span>
+      </div>
 
-    <!-- Modal Form "Write Us" -->
-    <section class="write-us">
-      <h2 class="visually-hidden">Напишите нам</h2>
-      <form action="https://echo.htmlacademy.ru" class="write-us-form">
-        <ul>
+      <div class="footer-row3">
+        <ul class="social-links">
           <li>
-            <label for="name">Ваше имя:</label>
-            <input type="text" name="name" id="name" placeholder="Имя Фамилия">
+            <a class="social-button" href="https://www.facebook.com/" target="_blank">
+              <img src="img/facebook.svg" width="32" height="32" alt="">
+              <span class="visually-hidden">Facebook</span>
+            </a>
           </li>
           <li>
-            <label for="email">Ваш e-mail:</label>
-            <input type="email" name="email" id="email" placeholder="email@example.com">
+            <a class="social-button" href="https://www.instagram.com/" target="_blank">
+              <img src="img/instagram.svg" width="32" height="32" alt="">
+              <span class="visually-hidden">Instagram</span>
+            </a>
           </li>
           <li>
-            <label for="message">Текст письма:</label>
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="В свободной форме">
-            </textarea>
+            <a class="social-button" href="https://twitter.com/" target="_blank">
+              <img src="img/twitter.svg" width="32" height="32" alt="">
+              <span class="visually-hidden">Twitter</span>
+            </a>
           </li>
         </ul>
-        <button type="submit" class="button button-write-us">Отправить</button>
-      </form>
-      <button class="modal-close" type="button">Закрыть</button>
-    </section>
-
-    <!-- Modal Map -->
-    <section class="modal-map">
-      <h2 class="visually-hidden">Как добраться до нас</h2>
-      <div class="map">
-        <img src="img/map-big.jpg" alt="Наш офис находится по адресу город Москва, улица Строителей, дом 15">
+        <a class="html-logo" href="https://htmlacademy.ru/" target="blank_">
+          <img src="img/logo-html.svg" width="27" height="35" alt="HTML Academy logo">
+        </a>
       </div>
-      <button class="modal-close" type="button">Закрыть</button>
-    </section>
-  </div>
+
+    </div>
+  </footer>
+
+  <!-- Modal Form "Write Us" -->
+  <section class="modal modal-write-us">
+    <h2 class="visually-hidden">Напишите нам</h2>
+    <form action="https://echo.htmlacademy.ru" class="write-us-form">
+      <ul class="form-data">
+        <li>
+          <label for="name">Ваше имя:</label>
+          <input type="text" name="name" id="name" placeholder="Имя Фамилия">
+        </li>
+        <li>
+          <label for="email">Ваш e-mail:</label>
+          <input type="email" name="email" id="email" placeholder="email@example.com">
+        </li>
+      </ul>
+      <p>
+        <label for="message">Текст письма:</label>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="В свободной форме">
+        </textarea>
+      </p>
+      <button type="submit" class="button button-write-us">Отправить</button>
+    </form>
+    <button class="modal-close" type="button">Закрыть</button>
+  </section>
+
+  <!-- Modal Map -->
+  <section class="modal modal-map">
+    <h2 class="visually-hidden">Как добраться до нас</h2>
+    <div class="map">
+      <img src="img/map-big.jpg" alt="Наш офис находится по адресу город Москва, улица Строителей, дом 15">
+    </div>
+    <button class="modal-close" type="button">Закрыть</button>
+  </section>
+
 </body>
 
 </html>

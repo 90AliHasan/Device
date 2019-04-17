@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+:root {
+    --button-bg-color: #ffc600;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -67,7 +71,20 @@ img {
     color: #000;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-decoration: line-through #f0c52e;
+    position: relative;
+    z-index: 1;
+}
+
+.button:not(.button-services-current)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    margin-top: calc(8px / 2 * -1);
+    border-bottom: 8px solid var(--button-bg-color);
 }
 
 .main-logo {
@@ -331,14 +348,14 @@ p.slide {
 
 .product-groups-item img {
     display: block;
-    width: 160px;
-    height: 160px;
     margin: 0;
     margin-bottom: 35px;
-    padding: 0;
-
     background-color: #f7e296;
 }
+
+/* .product-groups-list li:first-child img {
+    padding-top: calc((160px - attr(height)) / 2);
+} */
 
 .product-groups-item img:hover  {
     background-color: #f0c52e;
@@ -742,7 +759,7 @@ a.user-nav-item:active {
 
 /* Modal  sections*/
 .modal {
-    position: fixed;
+   position: fixed;
 }
 
 /* Section "Write Us" */
@@ -752,14 +769,27 @@ a.user-nav-item:active {
     z-index: 2;
 
     width: 960px;
-    height: 440px;
+    min-height: 500px;
     margin: 0 auto;
     margin-left: -480px;
     padding-top: 95px;
 
-    background-color: #ccc;
     box-shadow: 0 5px 15px 5px rgba(4, 6, 6, 0.2);
+    border-radius: 5px;
+    background-color: #fff;
 } 
+
+.modal-map {
+    top: 50px;
+    left: 50%;
+    z-index: 2;
+
+    width: 960px;
+    height: 555px;
+
+    margin-left: -483px;
+    box-shadow: 0 10px 15px 5px rgba(4, 6, 6, 0.2);
+}
 
 .write-us-form {
     width: 760px;
@@ -768,6 +798,7 @@ a.user-nav-item:active {
 
 .write-us-form p {
     margin: 0;
+    margin-top: 35px;
     padding: 0;
 }
 
@@ -791,13 +822,12 @@ a.user-nav-item:active {
 
     display: block;
     width: 100%;
+    box-sizing: border-box;
 
+    padding: 15px 20px;
+    margin-top: 10px;
+    border: 3px solid transparent;
     background-color: #f2f2f2;
-    border: none;
-}
-
-.write-us-form input {
-    padding: 15px 0;
 }
 
 .write-us-form input:hover,
@@ -809,7 +839,55 @@ a.user-nav-item:active {
 .write-us-form textarea:focus {
     color: rgb(0, 0, 0);
     border: 3px solid #f7e296;
-    background-color: transparent;
+    background-color: #fff;
+}
+
+.write-us-form button[type="submit"] {
+    margin-top: 50px;
+    padding: 10px 40px;
+    border: none;
+    background-color: #fff;
+}
+
+.write-us-form button[type="submit"]:hover {
+    text-decoration: none;
+    background-color: var(--button-bg-color);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+    background-color: #f7e296;
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: "";
+
+    position: absolute;
+    top: 30px;
+    left: 15px;
+
+
+    width: 30px;
+    height: 2px;
+
+    background-color: #fff;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
 }
 
 .page-title {

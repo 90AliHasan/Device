@@ -1,10 +1,10 @@
-
 // Search Input and Search Button at the end of it 
 let searchInput = document.querySelector('.search-input');
 let searchButton = document.querySelector('.search-button');
 
 // Devices slider buttons
 let catalogButton = document.querySelector('.button-catalog');
+// let innerPageCatalogButton = document.querySelector('.inner-page .button-catalog');  // inner-page 
 let slideToggle = document.querySelectorAll('.slide-toggle');
 
 // Services slider buttons and slides
@@ -12,6 +12,10 @@ let serviceButtons = document.querySelectorAll('.button-services');
 let deliverySlide = document.querySelector('.delivery-slide');
 let warrantySlide = document.querySelector('.warranty-slide');
 let creditSlide = document.querySelector('.credit-slide');
+
+//  INNER PAGE Modal list hide/show in main-header
+// let innerPageCatalogModal = document.getElementById('aaaaa');
+
 
 // Search Button appears when Search Input in focus
 searchInput.addEventListener("focusin", ev => searchButton.classList.remove('visually-hidden'));
@@ -25,7 +29,7 @@ catalogButton.addEventListener('click', function() {
 
     let header = document.querySelector('.main-header');
     if (catalogModal.classList.contains('visually-hidden')) {
-        header.style.paddingBottom = '165px';
+        header.style.paddingBottom = '160px';
         header.style.zIndex = 0;
     }
     else {
@@ -110,3 +114,29 @@ serviceButtons[2].addEventListener("click", ev => {
     serviceButtons[0].classList.remove('button-services-current');
     serviceButtons[1].classList.remove('button-services-current');
 });
+
+
+
+
+
+
+// // INNER PAGE scripts
+// // Modal list hide/show in main-header
+// innerPageCatalogButton.addEventListener('click', function(ev) {
+
+//     innerPageCatalogModal.classList.toggle('visually-hidden');
+    
+
+//     let innerPageHeader = document.querySelector('.inner-page .main-header');
+//     console.log(innerPageHeader);
+    
+
+//     if (innerPageCatalogModal.classList.contains('visually-hidden')) {
+//         innerPageHeader.style.paddingBottom = '50px';
+//         innerPageHeader.style.zIndex = 0;
+//     }
+//     else {
+//         innerPageHeader.style.paddingBottom = 0;
+//         innerPageHeader.style.zIndex = 2;
+//     }
+// });

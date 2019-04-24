@@ -35,11 +35,15 @@ body {
 
 header {
     padding: 0 60px;
-    padding-top: 40px;
-    padding-bottom: 165px;
+    padding-top: 45px;
+    padding-bottom: 160px;
     margin-top: 40px;
     background-color: #f7e296;
     position: relative;
+}
+
+.inner-page .main-header {
+    padding-bottom: 45px;
 }
 
 a {
@@ -123,7 +127,7 @@ img {
     list-style: none;
     padding: 0;
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 37px;
 }
 
 .user-nav li {
@@ -135,6 +139,11 @@ img {
 .user-nav-user::before {
     content: url("../img/user-dark.svg");
     padding-right: 10px;
+}
+
+.exit-profile {
+    opacity: 0.3;
+    margin-left: 15px;
 }
 
 .user-nav-compare::before {
@@ -156,7 +165,7 @@ img {
     font: inherit;
     box-sizing: border-box;
     width: 360px;
-    padding: 8px 40px;
+    padding: 0px 40px;
     margin-right: 180px;
     border: 2px solid transparent;
     border-right: 0;
@@ -170,7 +179,7 @@ img {
 
 .search-button {
     position: absolute;
-    top: 44px;
+    top: 28px;
     left: 420px;
 
     font-size: 15px;
@@ -291,7 +300,22 @@ img {
     list-style: none;
     padding: 0;
     margin-top: 25px;
-    margin-bottom: 32px;
+    margin-bottom: 27px;
+}
+
+.inner-page .catalog-modal-list {
+    position: absolute;
+    top: 115px;
+    left: 0;
+
+    box-sizing: border-box;
+    width: 1160px;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-bottom: 40px;
+    margin-top: 25px;
+
+    background-color: #f7e296;
 }
 
 .catalog-modal-list div {
@@ -1156,16 +1180,41 @@ a.user-nav-item:active {
 .page-title {
     font-size: 47px;
     line-height: 48px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    margin-left: 60px;
 }
 
 .breadcrumbs {
+    display: flex;
     list-style: none;
+    padding-left: 60px;
+    margin: 0;
+    margin-bottom: 45px;
+    position: relative;
+}
+
+.breadcrumbs::before,
+.breadcrumbs::after {
+    content: ">";
+    font-size: 13px;
+    position: absolute;
+    top: 0;
+}
+
+.breadcrumbs::before {
+    left: 128px;
+}
+
+.breadcrumbs::after {
+    left: 270px;
 }
 
 .breadcrumbs li {
     font-family: "Open Sans Light", Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 24px;
+    margin-right: 35px;
 }
 
 .breadcrumbs a,
@@ -1190,7 +1239,29 @@ a.user-nav-item:active {
     letter-spacing: 2px;
 }
 
+
+
 /* Side Form styling */
+
+.inner-page .index-columns h2 {
+    margin: 0;
+}
+
+.filter {
+    box-sizing: border-box;
+    width: 330px;
+}
+
+.filter h2 {
+    padding: 23px 0;
+    padding-left: 60px;
+    background-color: #dbdbdb;
+}
+
+.filter-form {
+    padding-left: 60px;
+}
+
 fieldset {
     border: none;
 }
@@ -1206,15 +1277,32 @@ fieldset {
 }
 
 /* Parameters for sorting products */
+.wrapper-sorting {
+    display: flex;
+    padding: 23px 0;
+    background-color: #ebebeb;
+}
+
+.wrapper-sorting h2 {
+    padding-left: 70px;
+    padding-right: 50px;
+}
+
 .sorting-params {
+    display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .sorting-params li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Open Sans Regular", Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 18px;
-    display: inline;
+    margin-right: 20px;
 }
 
 .sorting-params a {
@@ -1232,18 +1320,45 @@ fieldset {
 }
 
 /* Catalog of products */
+.catalog {
+    width: 830px;
+}
+
 .catalog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 70px;
+}
+
+.catalog-item {
+    width: 360px;
+    margin-top: 45px;
 }
 
 .catalog-item h3 {
     color: #000;
     font-size: 18px;
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.catalog-item a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .price {
     font-family: "Gilroy Light", Arial, Helvetica, sans-serif;
     font-size: 16px;
+    align-self: flex-start;
+    margin-top: 30px;
 }
 
 /* Pagination under products list */

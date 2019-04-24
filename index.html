@@ -13,30 +13,44 @@
 
 <body>
   <div class="main-container">
+
+    <!-- Header Section -->
     <header class="main-header">
+      <!-- Main Logo -->
       <a class="main-logo" href="#">Device</a>
+      <!-- User Navigation -->
       <ul class="user-nav">
         <li class="search">
           <input class="search-input" type="text" name="search" id="search" placeholder="Поиск по сайту" />
-          <button type="button">Найти</button>
+          <button class="search-button visually-hidden" type="button">Найти</button>
         </li>
         <li><a class="user-nav-user" href="#0">Войти</a></li>
         <li><a class="user-nav-compare" href="#0">Сравнить</a></li>
         <li><a class="user-nav-cart" href="#0">Корзина</a></li>
       </ul>
+
+      <!-- Main Navigation in Header -->
       <nav>
         <ul class="main-nav">
           <li>
-            <a href="#0">Каталог товаров</a>
+            <button class="button-catalog">Каталог товаров</button>
+            <!-- Modal list of products hide/show on click -->
             <ul class="catalog-modal-list visually-hidden">
-              <li class="catalog-modal-item"><a href="#">Виртуальная реальность</a></li>
-              <li class="catalog-modal-item"><a href="#">Моноподы для селфи</a></li>
-              <li class="catalog-modal-item"><a href="#">Экшн-камеры</a></li>
-              <li class="catalog-modal-item"><a href="#">Фитнес-браслеты</a></li>
-              <li class="catalog-modal-item"><a href="#">Умные часы</a></li>
-              <li class="catalog-modal-item"><a href="#">Квадрокоптеры</a></li>
+              <div class="col-1">
+                <li class="catalog-modal-item"><a href="#0">Виртуальная реальность</a></li>
+                <li class="catalog-modal-item"><a href="#0">Моноподы для селфи</a></li>
+                <li class="catalog-modal-item"><a href="#0">Экшн-камеры</a></li>
+              </div>
+              <div class="col-2">
+                <li class="catalog-modal-item"><a href="#0">Фитнес-браслеты</a></li>
+                <li class="catalog-modal-item"><a href="#0">Умные часы</a></li>
+              </div>
+              <div class="col-3">
+                <li class="catalog-modal-item"><a href="#0">Квадрокоптеры</a></li>
+              </div>
             </ul>
           </li>
+          <!-- Main Navigation continues -->
           <li><a href="#0">Доставка</a></li>
           <li><a href="#0">Гарантия</a></li>
           <li><a href="#0">Контакты</a></li>
@@ -44,10 +58,20 @@
       </nav>
     </header>
 
+    <!-- Main Section -->
     <main class="container">
       <h1 class="visually-hidden">Магазин электронной техники "Девайс"</h1>
       <section class="slides">
         <h2 class="visually-hidden">Наши девайсы</h2>
+        <div class="slide-toggle slide-toggle-1">
+          <div class="inner-circle"></div>
+        </div>
+        <div class="slide-toggle slide-toggle-2">
+          <div class="inner-circle visually-hidden"></div>
+        </div>
+        <div class="slide-toggle slide-toggle-3">
+          <div class="inner-circle visually-hidden"></div>
+        </div>
 
         <!-- Слайд № 1: Селфи палка -->
         <article class="slide-item slide1">
@@ -60,7 +84,7 @@
               Самая длинная палка для селфи доступна в нашем магазине. <br>
               Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.
             </p>
-            <a class="button button-slider" href="#">Подробнее</a>
+            <a class="button button-slider" href="#0">Подробнее</a>
             <table class="parameter-table">
               <tr class="parameter-row">
                 <td>8.5 м</td>
@@ -87,7 +111,7 @@
               Мотивирующие фитнес-браслеты помогут найти в себе силы <br>
               не пропускать занятия и соблюдать диету.
             </p>
-            <a class="button button-slider" href="#">Подробнее</a>
+            <a class="button button-slider" href="#0">Подробнее</a>
             <table class="parameter-table">
               <tr class="parameter-row">
                 <td>48 часов</td>
@@ -109,7 +133,7 @@
               Этот обычный, на первый взгляд, квадрокоптер оснащен <br>
               мощным лазером, замаскированным под стандартную камеру.
             </p>
-            <a class="button button-slider" href="#">Подробнее</a>
+            <a class="button button-slider" href="#0">Подробнее</a>
             <table class="parameter-table">
               <tr class="parameter-row">
                 <td>800 м</td>
@@ -131,7 +155,7 @@
           <li class="product-groups-item">
             <a href="#0">Виртуальная реальность</a>
             <div class="background">
-              <img src="img/popular-1.svg" width="97" height="55" alt="Виртуальная реальность" />
+              <img src="img/popular-1.svg" alt="Виртуальная реальность" />
             </div>
           </li>
           <li class="product-groups-item">
@@ -170,7 +194,7 @@
       <!-- Услуги -->
       <section class="services">
         <h2 class="visually-hidden">Услуги</h2>
-
+        <!-- Services slides buttons -->
         <ul class="services-list">
           <li class="services-item">
             <a class="button button-services button-services-current">Доставка</a>
@@ -184,8 +208,8 @@
         </ul>
 
         <div class="services-sliders">
-
-          <div class="delivery-slide visu1ally-hidden">
+          <!-- Delivery Service slide -->
+          <div class="delivery-slide">
             <article class="delivery">
               <h3 class="delivery-heading">Доставка</h3>
               <p class="delivery-info">
@@ -196,7 +220,7 @@
             </article>
             <img src="img/delivery.svg" alt="Доставка">
           </div>
-
+          <!-- Warranty Service slide -->
           <div class="warranty-slide visually-hidden">
             <article class="warranty">
               <h3 class="warranty-heading">Гарантия</h3>
@@ -208,7 +232,7 @@
             </article>
             <img src="img/warranty.svg" alt="Гарантия">
           </div>
-
+          <!-- Credit Service slide -->
           <div class="credit-slide visually-hidden">
             <article class="credit">
               <h3 class="credit-heading">Кредит</h3>
@@ -255,7 +279,7 @@
             <li class="courier-item">Автотрейдинг</li>
             <li class="courier-item">ЖелДорЭкспедиция</li>
           </ul>
-          <a class="button" href="#">Подробнее о нас</a>
+          <a class="button" href="#0">Подробнее о нас</a>
         </section>
 
         <!-- Контакты -->
@@ -267,7 +291,7 @@
           <div class="map">
             <img src="img/map.jpg" width="560" height="230" alt="Москва, ул.Строителей,15">
           </div>
-          <a class="button" href="#">Напишите нам</a>
+          <a class="button" href="#0">Напишите нам</a>
         </section>
       </div>
     </main>
@@ -362,6 +386,7 @@
     </button>
   </section>
 
+  <script src="js/main.js"></script>
 </body>
 
 </html>

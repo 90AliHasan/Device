@@ -12,9 +12,11 @@
     font-style: normal;
 }
 
+/* CSS Variables */
 :root {
     --button-bg-color: #ffc600;
 }
+/*  */
 
 body {
     margin: 0;
@@ -33,10 +35,11 @@ body {
 
 header {
     padding: 0 60px;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 165px;
     margin-top: 40px;
     background-color: #f7e296;
+    position: relative;
 }
 
 a {
@@ -48,6 +51,7 @@ img {
     height: auto;
 }
 
+/* Snippet for hiding */
 .visually-hidden {
     position: absolute;
     white-space: nowrap;
@@ -67,6 +71,7 @@ img {
     padding: 0 20px;
 }
 
+/* Global Button styles */
 .button {
     color: #000;
     letter-spacing: 2px;
@@ -87,10 +92,15 @@ img {
     border-bottom: 8px solid var(--button-bg-color);
 }
 
+.button:active {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+/* Main Logo */
 .main-logo {
     position: absolute;
-    top: 17px;
-    left: 108px;
+    top: -24px;
+    left: 60px;
 
     color: #000;
     font-size: 48px;
@@ -107,12 +117,13 @@ img {
     opacity: 0.3;
 }
 
+/* User Navigation in Header and Footer */
 .user-nav {
     display: flex;
     list-style: none;
     padding: 0;
     margin-top: 0px;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .user-nav li {
@@ -120,10 +131,6 @@ img {
     font-size: 15px;
     line-height: 30px;
 }
-
-/* .search::before {
-    content: url("../img/search.svg");
-} */
 
 .user-nav-user::before {
     content: url("../img/user-dark.svg");
@@ -140,19 +147,40 @@ img {
     padding-right: 10px;
 }
 
+/* Search input in User Navigation in Header */
+.search {
+    display: flex;
+}
+
 .search-input {
     font: inherit;
     box-sizing: border-box;
     width: 360px;
+    padding: 8px 40px;
     margin-right: 180px;
-    padding: 10px 40px;
     border: 2px solid transparent;
+    border-right: 0;
     outline: none;
 
     background-color: transparent;
     background-image: url("../img/search.svg");
     background-repeat: no-repeat;
     background-position: 0 center;
+}
+
+.search-button {
+    position: absolute;
+    top: 44px;
+    left: 420px;
+
+    font-size: 15px;
+    line-height: 30px;
+    padding: 6px 20px;
+    margin-right: 93px;
+    border: 2px solid #000000;
+    cursor: pointer;
+
+    background: transparent;
 }
 
 .search-input:focus {
@@ -166,6 +194,16 @@ img {
 .search-input:hover::placeholder, 
 .search-input:focus::placeholder {
     opacity: 0.6;
+}
+
+.search-button:hover {
+    color: #fff;
+    background-color: #000000;
+}
+
+.search-button:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #000000;
 }
 
 .user-nav li:nth-child(3) {
@@ -186,6 +224,7 @@ img {
     opacity: 0.3;
 }
 
+/* Main Navigation in Header */
 .main-nav {
     display: flex;
     list-style: none;
@@ -201,7 +240,7 @@ img {
     width: 160px;
 }
 
-.main-nav li:last-child {
+.main-nav > li:last-child {
     width: 110px;
     margin-left: auto;
 }
@@ -221,8 +260,54 @@ img {
     opacity: 0.3;
 }
 
+/* Button "Каталог товаров" for showing modal list in Header*/
+.button-catalog {
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.button-catalog:hover {
+    opacity: 0.6;
+}
+
+.button-catalog:active {
+    opacity: 0.3;
+}
+
+.button-catalog::after {
+    content: url("../img/plus.png");
+    opacity: 0.3;
+    line-height: 24px;
+    padding-left: 10px;
+}
+
+/* Modal list of products in Header */
 .catalog-modal-list {
+    display: flex;
     list-style: none;
+    padding: 0;
+    margin-top: 25px;
+    margin-bottom: 32px;
+}
+
+.catalog-modal-list div {
+    margin-right: 40px;
+}
+
+.col-1 {
+    width: 200px;
+}
+
+.col-2 {    
+    width: 160px;
+}
+
+.col-3 {
+    width: 130px;
 }
 
 .catalog-modal-item a {
@@ -233,10 +318,65 @@ img {
     letter-spacing: normal;
 }
 
+/* 3 Slides of Devices */
 .slides {
     position: relative;
+    z-index: 1;
 }
 
+/* Buttons for changing slides */
+.slide-toggle-1 {
+    width: 11px;
+    height: 11px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 230px;
+    right: 150px;
+    z-index: 2;
+}
+
+.slide-toggle-2 {
+    width: 11px;
+    height: 11px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 230px;
+    right: 115px;
+    z-index: 2;
+}
+
+.slide-toggle-3 {
+    width: 11px;
+    height: 11px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 230px;
+    right: 80px;
+    z-index: 2;
+}
+
+.slide-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Inner circle in buttons for showing current slide */
+.inner-circle {
+    width: 5px;
+    height: 5px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Slides of Devices */
 .slide-item {
     display: flex;
     justify-content: space-between;
@@ -277,9 +417,54 @@ img {
     margin-top: 55px;
 }
 
+/* Info about Device in slides */
 .device-info {
     width: 500px;
-    margin-top: 75px;
+    margin-top: 35px;
+    padding-top: 40px;
+    position: relative;
+}
+
+.device-info::before {
+    content: "";
+    width: 100px;
+    height: 7px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    background-color: #fff;
+}
+
+.slide1 .device-info::after {
+    content: "01";
+    color: #fff;
+    font-size: 180px;
+    line-height: 180px;
+    position: absolute;
+    top: -53px;
+    right: -5px;
+}
+
+.slide2 .device-info::after {
+    content: "02";
+    color: #fff;
+    font-size: 180px;
+    line-height: 180px;
+    position: absolute;
+    top: -55px;
+    right: -5px;
+}
+
+.slide3 .device-info::after {
+    content: "03";
+    color: #fff;
+    font-size: 180px;
+    line-height: 180px;
+    position: absolute;
+    top: -55px;
+    right: -5px;
+    z-index: -1;
 }
 
 b.slide {
@@ -297,6 +482,7 @@ p.slide {
     margin-bottom: 50px;
 }
 
+/* Button "Подробнее" in slides */
 .button-slider {
     display: inline-block;
     margin-bottom: 50px;
@@ -308,12 +494,7 @@ p.slide {
     background-color: #f0c52e;
 }
 
-.button-slider:active {
-    opacity: 0.3;
-    text-decoration: none;
-    background-color: #f0c52e;
-}
-
+/* Parameters of Device */
 .parameter-table td {
     box-sizing: border-box;
     width: 140px;
@@ -345,6 +526,7 @@ p.slide {
     margin-right: 0;
 }
 
+/* Groups of products */
 .product-groups {
     padding-top: 485px;
 }
@@ -379,6 +561,7 @@ p.slide {
     opacity: 0.3;
 }
 
+/* Background Color for Groups of products */
 .background {
     width: 160px;
     height: 160px;
@@ -416,6 +599,7 @@ p.slide {
     background-color: #f0c52e;
 }
 
+/* Services section */
 .services {
     display: flex;
     justify-content: space-between;
@@ -426,6 +610,7 @@ p.slide {
     z-index: 1;
 }
 
+/* Gray background for Services section */
 .services::before {
     content: "";
 
@@ -520,8 +705,10 @@ p.slide {
     font-size: 15px;
     line-height: 30px;
     margin: 0;
+    margin-top: 35px;
 }
 
+/* Logotypes of famous brands */
 .logos-list {
     display: flex;
     justify-content: space-between;
@@ -541,6 +728,7 @@ p.slide {
     filter: grayscale(0);
 }
 
+/* About Us and Contacts section */
 .index-columns {
     display: flex;
     justify-content: space-between;
@@ -590,6 +778,7 @@ p.slide {
     margin-bottom: 55px;
 }
 
+/* Courier companies for shipping to customers */
 .courier-list {
     list-style: none;
     font-size: 16px;
@@ -605,7 +794,6 @@ p.slide {
 
 .courier-list li::before {
     content: "";
-
     position: absolute;
     top: 15px;
     left: 0;
@@ -614,8 +802,6 @@ p.slide {
     height: 6px;
     border: 2px solid #e6e6e6;
     border-radius: 50%;
-
-    /* background-color: #000000; */
 }
 
 .about-us a,
@@ -634,6 +820,7 @@ p.slide {
     background-color: #ffc600;
 }
 
+/* Footer section */
 .main-footer {
     padding: 60px 0;
     background-color: #464646;
@@ -654,6 +841,7 @@ p.slide {
     margin-bottom: 55px;
 }
 
+/* Main Logo in Footer */
 .footer-logo {
     width: 165px;
     color: #ffc600;
@@ -671,6 +859,7 @@ p.slide {
     opacity: 0.3;
 }
 
+/* User Navigation in Footer */
 .footer.user-nav {
     display: flex;
     justify-content: space-between;
@@ -729,6 +918,7 @@ a.user-nav-item:active {
     line-height: 30px;
 }
 
+/* Main Navigation in Footer */
 .footer-nav {
     display: flex;
     justify-content: space-between;
@@ -803,6 +993,7 @@ a.user-nav-item:active {
     opacity: 0.1;
 }
 
+/* HTML Academy Logo */
 .html-logo:hover {
     opacity: 0.6;
 }
@@ -834,6 +1025,7 @@ a.user-nav-item:active {
     background-color: #fff;
 } 
 
+/* Modal Map section positioning */
 .modal-map {
     top: 50px;
     left: 50%;
@@ -897,6 +1089,10 @@ a.user-nav-item:active {
     background-color: #fff;
 }
 
+.write-us-form input:invalid {
+    background-color: #f6dada;
+}
+
 .write-us-form button[type="submit"] {
     margin-top: 50px;
     padding: 10px 40px;
@@ -909,6 +1105,7 @@ a.user-nav-item:active {
     background-color: var(--button-bg-color);
 }
 
+/* Button for closing modal pop-ups */
 .modal-close {
     position: absolute;
     top: 20px;
@@ -919,7 +1116,8 @@ a.user-nav-item:active {
 
     border: none;
     border-radius: 50%;
-    background-color: #f7e296;
+    opacity: 0.5;
+    background-color: #f0c52e;
 }
 
 .modal-close::before,
@@ -945,6 +1143,16 @@ a.user-nav-item:active {
     transform: rotate(-45deg);
 }
 
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-close:active {
+    opacity: 0.3;
+}
+
+
+/* INNER PAGE styling */
 .page-title {
     font-size: 47px;
     line-height: 48px;
@@ -982,6 +1190,7 @@ a.user-nav-item:active {
     letter-spacing: 2px;
 }
 
+/* Side Form styling */
 fieldset {
     border: none;
 }
@@ -996,6 +1205,7 @@ fieldset {
     line-height: 40px;
 }
 
+/* Parameters for sorting products */
 .sorting-params {
     list-style: none;
 }
@@ -1021,6 +1231,7 @@ fieldset {
     opacity: 1;
 }
 
+/* Catalog of products */
 .catalog-list {
     list-style: none;
 }
@@ -1035,6 +1246,7 @@ fieldset {
     font-size: 16px;
 }
 
+/* Pagination under products list */
 .pagination-list {
     list-style: none;
     background-color: #ebebeb;

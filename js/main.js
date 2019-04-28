@@ -1,21 +1,18 @@
 // Search Input and Search Button at the end of it 
 let searchInput = document.querySelector('.search-input');
 let searchButton = document.querySelector('.search-button');
-
 // Devices slider buttons
 let catalogButton = document.querySelector('.button-catalog');
-// let innerPageCatalogButton = document.querySelector('.inner-page .button-catalog');  // inner-page 
 let slideToggle = document.querySelectorAll('.slide-toggle');
-
 // Services slider buttons and slides
 let serviceButtons = document.querySelectorAll('.button-services');
 let deliverySlide = document.querySelector('.delivery-slide');
 let warrantySlide = document.querySelector('.warranty-slide');
 let creditSlide = document.querySelector('.credit-slide');
-
-//  INNER PAGE Modal list hide/show in main-header
-// let innerPageCatalogModal = document.getElementById('aaaaa');
-
+let writeUsForm = document.querySelector('.write-us-form'); 
+let buttonWriteUs = document.querySelector('.button-write-us'); // Button "Напишите нам" for opening modal form
+let buttonClose = document.querySelectorAll('.modal-close'); // Button for closing both modals
+let map = document.querySelector('.map'); // Map image in the Contacts section
 
 // Search Button appears when Search Input in focus
 searchInput.addEventListener("focusin", ev => searchButton.classList.remove('visually-hidden'));
@@ -23,19 +20,11 @@ searchInput.addEventListener("focusin", ev => searchButton.classList.remove('vis
 searchInput.addEventListener("focusout", ev => searchButton.classList.add('visually-hidden'));
 
 // Modal list hide/show in main-header
-catalogButton.addEventListener('click', function() {
+catalogButton.addEventListener('click', function(ev) {
     let catalogModal = document.querySelector('.catalog-modal-list');
-    catalogModal.classList.toggle('visually-hidden');
-
     let header = document.querySelector('.main-header');
-    if (catalogModal.classList.contains('visually-hidden')) {
-        header.style.paddingBottom = '160px';
-        header.style.zIndex = 0;
-    }
-    else {
-        header.style.paddingBottom = 0;
-        header.style.zIndex = 2;
-    }
+    catalogModal.classList.toggle('visually-hidden'); 
+    header.classList.toggle('with-modal');
 });
 
 // Devices slides changing manually
@@ -43,10 +32,8 @@ slideToggle.forEach(btn => btn.addEventListener('click', ev => {
     let slide1 = document.querySelector('.slide1');
     let slide2 = document.querySelector('.slide2');
     let slide3 = document.querySelector('.slide3');
+    let innerCircles = document.querySelectorAll('.inner-circle'); // Inner circle for showing current slide
 
-    // Variable for Inner circles in circles for showing current slide
-    let innerCircles = document.querySelectorAll('.inner-circle');
-          
     // If 1st circle clicked
     if (ev.target.classList.contains('slide-toggle-1')) {
         slide1.classList.remove('visually-hidden');
@@ -115,28 +102,22 @@ serviceButtons[2].addEventListener("click", ev => {
     serviceButtons[1].classList.remove('button-services-current');
 });
 
+// Show "Write Us form" when "Напишите нам" button clicked
+buttonWriteUs.addEventListener('click', ev => {
+    let modalWriteUs = document.querySelector('.modal-write-us');
+    modalWriteUs.classList.remove('visually-hidden');
+    modalWriteUs.style.opacity = '1';
+});
 
+// Show "Modal Map" when map image is clicked
+map.addEventListener('click', ev => {
+    let modalMap = document.querySelector('.modal-map');
+    modalMap.classList.remove('visually-hidden');
+    modalMap.style.opacity = '1';
+});
 
-
-
-
-// // INNER PAGE scripts
-// // Modal list hide/show in main-header
-// innerPageCatalogButton.addEventListener('click', function(ev) {
-
-//     innerPageCatalogModal.classList.toggle('visually-hidden');
-    
-
-//     let innerPageHeader = document.querySelector('.inner-page .main-header');
-//     console.log(innerPageHeader);
-    
-
-//     if (innerPageCatalogModal.classList.contains('visually-hidden')) {
-//         innerPageHeader.style.paddingBottom = '50px';
-//         innerPageHeader.style.zIndex = 0;
-//     }
-//     else {
-//         innerPageHeader.style.paddingBottom = 0;
-//         innerPageHeader.style.zIndex = 2;
-//     }
-// });
+// Close Modals when button "x" is clicked
+buttonClose.forEach(btn => btn.addEventListener('click', ev => {
+    btn.closest('section').classList.add('visually-hidden');
+    btn.closest('section').style.opacity = '0';
+}));
